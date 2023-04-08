@@ -1,6 +1,31 @@
-# Overview
+# Image Recognition for Shoe SKU Identification
 
-This project is meant to use image recognition to identify shoe models and then proceed to narrow it down to the specific sku of the shoe.
-This project is being built for Notify, which they intend to incorporate into their monitors and ping for profitable skus.
-This could prove helpful in the future if stores ever start messing with the titles but still uploading correct images of the product.
-One store that currently does this is TheBetterGeneration. Using this method could make a TheBetterGeneration bot that only runs for profitable skus.
+This project aims to identify shoe models and specific SKUs using image recognition. It is built for Notify to incorporate into their monitors and notify users of profitable SKUs. This can be particularly helpful for stores that obfuscate product titles but still upload correct images, such as TheBetterGeneration.
+
+## Table of Contents
+
+- **Overview**
+- **Specifications**
+- **Dataset Structure**
+
+## Overview
+
+- **Project Goal**: Use image recognition to identify shoe models and narrow down to specific SKUs.
+
+- **Target Application**: Notify's monitors and profitable SKU pings.
+
+- **Potential Use Case**: A TheBetterGeneration bot that only runs for profitable SKUs.
+
+## Specifications
+
+- **Training**: 70 images per folder
+- **Testing**: 15 images per folder
+- **Validation**: 15 images per folder
+
+## Dataset Structure
+
+The dataset will be divided into three folders: Training, Testing, and Validation. Images will be distributed across these folders as follows:
+
+- **Training Folder**: Contains 70 images per category for training the model.
+- **Testing Folder**: Contains 15 images per category for testing the model's performance.
+- **Validation Folder**: Contains 15 images per category for validating and fine-tuning the model.
