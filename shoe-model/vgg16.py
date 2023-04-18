@@ -2,6 +2,7 @@ import os
 from PIL import Image
 import numpy as np
 import tensorflow as tf
+import pickle
 from tensorflow import keras
 from tensorflow.keras import layers, models
 from tensorflow.keras.utils import to_categorical
@@ -123,6 +124,10 @@ model.summary()
 
 # Fit the label encoder to the training labels
 label_encoder.fit(train_labels)
+
+# Save the label encoder to a file
+with open("label_encoder.pkl", "wb") as f:
+    pickle.dump(label_encoder, f)
 
 # Encode the training labels
 train_labels = label_encoder.transform(train_labels)

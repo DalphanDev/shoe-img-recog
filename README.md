@@ -29,3 +29,8 @@ The dataset will be divided into three folders: Training, Testing, and Validatio
 - **Training Folder**: Contains 70 images per category for training the model.
 - **Testing Folder**: Contains 15 images per category for testing the model's performance.
 - **Validation Folder**: Contains 15 images per category for validating and fine-tuning the model.
+
+## Notes
+
+Using a pre-trained image recognition model is definitely the way to go as it allows for the model to learn faster and get higher accuracy.
+I do not believe that VGG16.py uses any type of data augmentation, so it is possible that the model is simply memorizing the images, and not actually learning the shapes. If I were to add any type of data augmentation, it would use slight rotation and horizontal flipping. I might test with a VGG16_2.py that uses data augmentation and see if that performs better on tests.
