@@ -8,7 +8,7 @@ from tensorflow.keras.preprocessing import image
 from tensorflow.keras.utils import custom_object_scope
 
 # Load the label encoder from the file
-with open("label_encoder.pkl", "rb") as f:
+with open("label_encoder_2.pkl", "rb") as f:
     label_encoder = pickle.load(f)
     
 # Custom layer to replicate grayscale to 3 channels
@@ -19,13 +19,13 @@ class GrayToRGB(tf.keras.layers.Layer):
 # Load the saved model
 # model = load_model("shoeSilhouetteModel_VGG16.h5")
 with custom_object_scope({'GrayToRGB': GrayToRGB}):
-    model = load_model("shoeSilhouetteModel_VGG16.h5")
+    model = load_model("shoeSilhouetteModel_VGG16_2.h5")
 
 # Define the image size
 image_size = (224, 224)
 
 # Load a webp image
-image_path = os.path.join(os.getcwd(), "shoe-model/prediction/img6.webp")
+image_path = os.path.join(os.getcwd(), "shoe-model/prediction/img7.webp")
 img = Image.open(image_path).convert('L')  # Convert to grayscale
 img = img.resize(image_size)  # Resize the image
 img_array = np.array(img)  # Convert the image to a numpy array
