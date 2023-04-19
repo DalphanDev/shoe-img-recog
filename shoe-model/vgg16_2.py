@@ -3,6 +3,7 @@ from PIL import Image
 import numpy as np
 import tensorflow as tf
 import pickle
+import matplotlib.pyplot as plt
 from tensorflow import keras
 from tensorflow.keras import layers, models
 from tensorflow.keras.utils import to_categorical
@@ -85,6 +86,13 @@ data_generator = ImageDataGenerator(horizontal_flip=True)
 
 # Apply the data augmentation to the training images
 train_images_augmented = data_generator.flow(train_images.reshape(-1, 224, 224, 1), batch_size=len(train_images), shuffle=False).next()
+
+# Display the first n images
+n = 5
+for i in range(n):
+    plt.imshow(train_images_augmented[i], cmap='gray')
+    plt.title(f"Label: {train_labels[i]}")
+    plt.show()
 
 # Convert the augmented training images to tensors
 train_images_augmented = tf.convert_to_tensor(train_images_augmented, dtype=tf.float32)
