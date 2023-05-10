@@ -18,9 +18,9 @@ This project aims to identify shoe models and specific SKUs using image recognit
 
 ## Specifications
 
-- **Training**: ~70 images per folder
-- **Testing**: ~15 images per folder
-- **Validation**: ~15 images per folder
+- **Training**: ~70 -> ~115 images per folder
+- **Testing**: ~15 -> ~25 images per folder
+- **Validation**: ~15 -> ~25 images per folder
 
 ## Dataset Structure
 
