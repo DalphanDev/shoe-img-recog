@@ -12,11 +12,17 @@ def squarify_image(img: Image.Image) -> Image.Image:
     return square_image
 
 
+shoeModel = "nike-dunk-low"
+imgGroup = "val"
+
+
 # Define directories
 input_folder = os.path.join(
-    os.getcwd(), "sku-models\\unprocessed-images\\jordan-4\\train"
+    os.getcwd(), "sku-models\\unprocessed-images\\" + shoeModel + "\\" + imgGroup
 )
-output_folder = os.path.join(os.getcwd(), "sku-models\\models\\jordan-4\\train")
+output_folder = os.path.join(
+    os.getcwd(), "sku-models\\models\\" + shoeModel + "\\" + imgGroup
+)
 
 print("Input folder: " + input_folder)
 print("Output folder: " + output_folder)

@@ -9,13 +9,19 @@ from tensorflow.keras.callbacks import EarlyStopping
 # Define the image size
 image_size = (224, 224)
 
+# Define the shoe model to train for
+shoeModel = "jordan-5"
+
 # Define the directories
-train_dir = os.path.join(os.getcwd(), "sku-models\\models\\jordan-4\\train")
-test_dir = os.path.join(os.getcwd(), "sku-models\\models\\jordan-4\\test")
-val_dir = os.path.join(os.getcwd(), "sku-models\\models\\jordan-4\\val")
+train_dir = os.path.join(os.getcwd(), "sku-models\\models\\" + shoeModel + "\\train")
+test_dir = os.path.join(os.getcwd(), "sku-models\\models\\" + shoeModel + "\\test")
+val_dir = os.path.join(os.getcwd(), "sku-models\\models\\" + shoeModel + "\\val")
 
 # Define the number of classes
-num_classes = 14
+num_classes = 10
+
+# Define the number of epochs
+num_epochs = 100
 
 # Load the VGG-16 base model
 base_model = tf.keras.applications.VGG16(
@@ -75,7 +81,7 @@ early_stopping = EarlyStopping(
 # Train the model with the augmented training images
 history = model.fit(
     train_generator,
-    epochs=50,
+    epochs=num_epochs,
     validation_data=val_generator,
     steps_per_epoch=len(train_generator),
     validation_steps=len(val_generator),
@@ -85,4 +91,6 @@ history = model.fit(
 # Evaluate the model on the test set
 test_loss, test_acc = model.evaluate(test_generator, steps=len(test_generator))
 print("Test accuracy:", test_acc)
-model.save(os.path.join(os.getcwd(), "sku-models\\models\\jordan-4\\jordan4_VGG16.h5"))
+model.save(
+    os.path.join(os.getcwd(), "sku-models\\models\\" + shoeModel + "\\jordan5_VGG16.h5")
+)

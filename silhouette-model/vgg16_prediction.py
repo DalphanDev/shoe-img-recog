@@ -15,8 +15,7 @@ def get_class_labels(train_dir):
 
 
 def preprocess_image(image_path, target_size):
-    img = image.load_img(
-        image_path, target_size=target_size, color_mode='grayscale')
+    img = image.load_img(image_path, target_size=target_size, color_mode="grayscale")
     img = ImageOps.autocontrast(img)
     img = img_to_array(img)
     img = img.astype(np.float32) / 255.0
@@ -30,17 +29,17 @@ class GrayToRGB(tf.keras.layers.Layer):
 
 
 # Load the saved model
-with custom_object_scope({'GrayToRGB': GrayToRGB}):
-    model = load_model(os.path.join(
-        os.getcwd(), "silhouette-model/silhouetteModel_VGG16.h5"))
+with custom_object_scope({"GrayToRGB": GrayToRGB}):
+    model = load_model(
+        os.path.join(os.getcwd(), "silhouette-model/silhouetteModel_VGG16.h5")
+    )
 
 # Define the image size
-image_size = (299, 299)
+image_size = (224, 224)
 
 # Load an image
-image_path = os.path.join(
-    os.getcwd(), "silhouette-model/prediction/nb993.jpg")
-preprocessed_img = preprocess_image(image_path, (299, 299))
+image_path = os.path.join(os.getcwd(), "silhouette-model/prediction/nb993.jpg")
+preprocessed_img = preprocess_image(image_path, (224, 224))
 
 # Create the label map
 train_dir = os.path.join(os.getcwd(), "silhouette-model/train")
