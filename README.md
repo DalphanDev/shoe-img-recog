@@ -1,6 +1,6 @@
 # Image Recognition for Shoe SKU Identification
 
-This project aims to identify shoe models and specific SKUs using image recognition. It is built for Notify to incorporate into their monitors and notify users of profitable SKUs. This can be particularly helpful for stores that obfuscate product titles but still upload correct images, such as TheBetterGeneration. Also, for the shoe silhouette model, using grayscale will probably be a better option, since the color of the shoe does not matter. It would make sure the model focuses on the shape of the shoe.
+This project aims to identify shoe models and specific SKUs using image recognition. It is built to incorporate into monitors and notify users of profitable SKUs. This can be particularly helpful for stores that obfuscate product titles but still upload correct images, such as TheBetterGeneration. Also, for the shoe silhouette model, using grayscale will probably be a better option, since the color of the shoe does not matter. It would make sure the model focuses on the shape of the shoe.
 
 ## Table of Contents
 
